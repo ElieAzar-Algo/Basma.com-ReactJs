@@ -7,10 +7,8 @@ import { Redirect } from "react-router";
 
 
 function Customers (props){
- 
-
-  
-    const token = window.localStorage.getItem("adminToken");
+    
+    // const token = window.localStorage.getItem("adminToken");
    
     const [customers, setCustomers] = useState([]);
     const [field, setField] = useState('');
@@ -27,7 +25,7 @@ function Customers (props){
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-           Authorization: "Bearer " + token,
+          //  Authorization: "Bearer " + token,
           },
         });
         const result = await response.json();
