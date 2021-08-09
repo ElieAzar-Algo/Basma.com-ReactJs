@@ -1,25 +1,20 @@
-
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Customers from './pages/admin/Customers';
-import Dashboard from './pages/admin/Dashboard';
-
-
+import { withRouter } from "react-router-dom";
+import SessionProvider from "./components/session/SessionProvider";
+import Routes from "./components/Routes";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
     <>
-      <Router>
-       
-        <Switch>
-       
-          <Route path='/admin/dashboard' exact component={Dashboard}/>
-          <Route path='/admin/customers' component={Customers}/>
-        </Switch>
-      </Router>
+      <SessionProvider>
+        <Routes />
+      </SessionProvider>
+      <ToastContainer />
     </>
   );
 }
 
-export default App;
+export default withRouter(App);
