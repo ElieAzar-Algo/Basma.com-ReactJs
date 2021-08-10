@@ -5,6 +5,8 @@ import NotFound from "../pages/admin/NotFound";
 import Customers from "../pages/admin/Customers";
 import Dashboard from "../pages/admin/Dashboard";
 import Login from "../pages/admin/Login";
+import Register from "../pages/front/Register";
+import Home from "../pages/front/Home";
 
 export default function Routes() {
   const {
@@ -18,6 +20,18 @@ export default function Routes() {
       <PublicRoute
         path="/admin/login"
         component={Login}
+        token={access_token}
+        exact
+      />
+      <PublicRoute
+        path="/"
+        component={Register}
+        token={access_token}
+        exact
+      />
+       <PublicRoute
+        path="/home"
+        component={Home}
         token={access_token}
         exact
       />

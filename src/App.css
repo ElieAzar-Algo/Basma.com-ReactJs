@@ -41,3 +41,12 @@
   font-size: larger;
 }
 
+.logout{
+  color:white;
+  margin-top: 20%;
+}
+.logout:hover {
+  background-color: #1a83ff;
+  cursor: pointer;
+}
+

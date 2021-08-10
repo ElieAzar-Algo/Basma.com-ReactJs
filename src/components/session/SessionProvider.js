@@ -62,6 +62,7 @@ export default function SessionProvider({ children }) {
     updateSession({ user: { access_token: null } });
     removeCookie("id");
     removeCookie("token");
+    console.log('logged out')
   }
 
   const context = {

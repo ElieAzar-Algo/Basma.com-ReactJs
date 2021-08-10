@@ -42,6 +42,11 @@ function Navbar(props) {
                 </li>
               );
             })}
+             <li className="nav-text logout" onClick={logout}>
+               
+              <AiIcons.AiOutlineLogout />
+              <span className="menu-icon-text ">Logout</span>
+            </li>
           </ul>
         </nav>
       </IconContext.Provider>
