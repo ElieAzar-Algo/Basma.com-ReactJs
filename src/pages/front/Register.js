@@ -38,9 +38,9 @@ export default function Register(props) {
 
   async function handleSubmit(e) {
     e.nativeEvent.preventDefault();
-
+    console.log(process.env.REACT_APP_URL)
     const response = await fetch(
-      "http://localhost:8000/api/customer/register",
+      `${process.env.REACT_APP_URL}/api/customer/register`,
       {
         method: "POST",
         headers: {

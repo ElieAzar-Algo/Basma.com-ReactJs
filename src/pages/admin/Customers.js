@@ -5,17 +5,15 @@ import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import moment from 'moment';
 import {getCookie } from "../../cookies";
 
-import { Redirect } from "react-router";
 
-
-function Customers (props){
+function Customers (){
     
 
     const [customers, setCustomers] = useState([]);
     const [field, setField] = useState('');
     const [search, setSearch] = useState('');
     const [paginationLinks, setPaginationLinks] = useState({});
-    const [url, setUrl] = useState(`http://localhost:8000/api/customer/items/10`);
+    const [url, setUrl] = useState(`${process.env.REACT_APP_URL}/api/customer/items/10`);
 
     let token = getCookie("token");
     
@@ -38,7 +36,7 @@ function Customers (props){
       };
 
       const handleSearch = () =>{
-        setUrl(`http://localhost:8000/api/customer/items/10?field=${field}&search=${search}`)
+        setUrl(`${process.env.REACT_APP_URL}/api/customer/items/10?field=${field}&search=${search}`)
         // http://localhost:8000/api/customer/items/2?field=name&search=azar
       }
       
@@ -72,13 +70,13 @@ function Customers (props){
                             
                                 <Pagination aria-label="Customers per page">
                                     <PaginationItem>
-                                        <PaginationLink onClick={()=>setUrl(`http://localhost:8000/api/customer/items/20`)}>20</PaginationLink>
+                                        <PaginationLink onClick={()=>setUrl(`${process.env.REACT_APP_URL}/api/customer/items/20`)}>20</PaginationLink>
                                     </PaginationItem>
                                     <PaginationItem>
-                                        <PaginationLink onClick={()=>setUrl(`http://localhost:8000/api/customer/items/40`)}>40</PaginationLink>
+                                        <PaginationLink onClick={()=>setUrl(`${process.env.REACT_APP_URL}/api/customer/items/40`)}>40</PaginationLink>
                                     </PaginationItem>
                                     <PaginationItem>
-                                        <PaginationLink onClick={()=>setUrl(`http://localhost:8000/api/customer/items/60`)}>60</PaginationLink>
+                                        <PaginationLink onClick={()=>setUrl(`${process.env.REACT_APP_URL}/api/customer/items/60`)}>60</PaginationLink>
                                     </PaginationItem>
                                 </Pagination>
                                 

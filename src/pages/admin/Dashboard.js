@@ -6,7 +6,7 @@ import "chart.piecelabel.js";
 
 function Dashboard(props) {
   const [average, setAverage] = useState({});
-  const [url, setUrl] = useState(`http://localhost:8000/api/customer/range/1`);
+  const [url, setUrl] = useState(`${process.env.REACT_APP_URL}/api/customer/range/1`);
   const [labels, setLabels] = useState("Last Day");
 
   let token = getCookie("token");
@@ -28,7 +28,7 @@ function Dashboard(props) {
 
   const timeFrame = (val, label) => {
 
-    let request = `http://localhost:8000/api/customer/range/${val}`
+    let request = `${process.env.REACT_APP_URL}/api/customer/range/${val}`
     setUrl(request);
     setLabels(label);
     

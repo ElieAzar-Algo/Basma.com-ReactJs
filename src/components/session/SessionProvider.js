@@ -38,7 +38,7 @@ export default function SessionProvider({ children }) {
   async function login({ email, password }) {
     // try to login
     let { auth, error, user_id, access_token } = await fetch(
-      "http://localhost:8000/api/user/login",
+      `${process.env.REACT_APP_URL}/api/user/login`,
       {
         method: "post",
         headers: {
