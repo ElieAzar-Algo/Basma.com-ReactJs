@@ -16,5 +16,11 @@ export const SidebarData = [
         icon: <IoIcons.IoMdPeople />,
         cName: 'nav-text'
     },
+    {
+        title: "Logout",
+        path: "/admin/login",
+        icon: <AiIcons.AiOutlineLogout />,
+        cName: "nav-text",
+      },
     
 ]

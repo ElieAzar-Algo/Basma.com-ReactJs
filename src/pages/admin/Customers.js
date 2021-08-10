@@ -3,29 +3,30 @@ import Navbar from '../../components/admin/layout/sidebar/Navbar';
 import {Button, Table} from 'reactstrap';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import moment from 'moment';
+import {getCookie } from "../../cookies";
+
 import { Redirect } from "react-router";
 
 
 function Customers (props){
     
-    // const token = window.localStorage.getItem("adminToken");
-   
+
     const [customers, setCustomers] = useState([]);
     const [field, setField] = useState('');
     const [search, setSearch] = useState('');
     const [paginationLinks, setPaginationLinks] = useState({});
     const [url, setUrl] = useState(`http://localhost:8000/api/customer/items/10`);
 
+    let token = getCookie("token");
+    
    const getCustomers = async (id) => {
        
-        //const token = window.localStorage.getItem("token");
-        
         const response = await fetch(url, {
           method: "GET",
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-          //  Authorization: "Bearer " + token,
+           Authorization: "Bearer " + token,
           },
         });
         const result = await response.json();
