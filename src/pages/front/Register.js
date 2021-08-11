@@ -84,6 +84,10 @@ export default function Register(props) {
             />
           </div>
 
+          <div className="text-center pb-4">
+           <h4><strong>Register Your Information</strong></h4>
+          </div>
+
           <FormGroup>
             <Label for="name">Name</Label>
             <Input
@@ -139,7 +143,7 @@ export default function Register(props) {
               type="text"
               name="phone"
               onChange={handleChange}
-              placeholder="Phone Number"
+              placeholder="Phone Number minimum 8 digits "
             />
           </FormGroup>
           {errors.phone ? (
