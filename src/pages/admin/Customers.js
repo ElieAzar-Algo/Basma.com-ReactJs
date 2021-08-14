@@ -37,7 +37,7 @@ function Customers (){
 
       const handleSearch = () =>{
         setUrl(`${process.env.REACT_APP_URL}/api/customer/items/10?field=${field}&search=${search}`)
-        // http://localhost:8000/api/customer/items/2?field=name&search=azar
+       
       }
       
 

@@ -9,7 +9,7 @@ import {
   Label,
   UncontrolledAlert,
 } from "reactstrap";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 export default function Register(props) {
   const [errors, setErrors] = useState(false);
