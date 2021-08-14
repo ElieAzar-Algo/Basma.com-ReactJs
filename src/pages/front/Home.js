@@ -49,7 +49,7 @@ The better alternative to braces</h4>
                                             <ul className="social" >
                                                 <li><a href="https://www.facebook.com/wearebasma" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                                 <li><a href="https://www.linkedin.com/company/basma/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                                <li><a href="http://go.basma.com/home" target="_blank"><i class="fa fa-ravelry" aria-hidden="true"></i></a></li>
+                                                <li><a href="https://go.basma.com/home" target="_blank"><i class="fa fa-ravelry" aria-hidden="true"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
