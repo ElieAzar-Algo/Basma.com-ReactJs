@@ -1,4 +1,5 @@
 import Logo from "../../assets/basma-logo.svg";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import React, { useState } from "react";
 import {
@@ -13,6 +14,8 @@ import {
 
 export default function Register(props) {
   const [errors, setErrors] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState(false);
+
   const [state, setValue] = useState({
     name: "",
     email: "",
@@ -50,6 +53,7 @@ export default function Register(props) {
         },
         body: JSON.stringify({
           ...state,
+          'recaptcha_token':recaptchaToken,
         }),
       }
     );
@@ -60,8 +64,16 @@ export default function Register(props) {
 
       props.history.push("/home");
     } else {
+
+      console.log(result.errors)
       setErrors(result.errors);
     }
+  }
+
+  const handleRecaptcha = (val) =>{
+
+    console.log(val)
+    setRecaptchaToken(val);
   }
 
   return (
@@ -166,6 +178,22 @@ export default function Register(props) {
           {errors.address ? (
             <UncontrolledAlert color="danger">
               {errors.address}{" "}
+            </UncontrolledAlert>
+          ) : (
+            ""
+          )}
+
+          <hr />
+
+          <FormGroup>
+            <Label for="recaptcha">click here</Label>
+           <ReCAPTCHA
+           sitekey={process.env.REACT_APP_RECAPTCHA}
+           onChange={handleRecaptcha}/>
+          </FormGroup>
+          {errors.recaptcha_token ? (
+            <UncontrolledAlert color="danger">
+              {errors.recaptcha_token}{" "}
             </UncontrolledAlert>
           ) : (
             ""
