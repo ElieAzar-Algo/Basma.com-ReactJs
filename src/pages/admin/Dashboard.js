@@ -76,7 +76,7 @@ function Dashboard(props) {
           
           <div
             className="col-3"
-            style={{ marginLeft: "50%" }}
+            style={{ marginLeft: "45%" }}
           >
             <div style={{ marginBottom: "20px" }}>
               <input value="1" name="timeFrame" type="radio" id="1" onClick={(e) => timeFrame(e.target.value, 'Last Day')} />

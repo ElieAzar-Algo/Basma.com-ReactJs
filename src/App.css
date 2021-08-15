@@ -20,7 +20,7 @@
 .info-board{
   margin-left: 55%; 
   background-color:#1a83ff;
-  width:50px; 
+  /* width:50px;  */
   height:200px;
   top:150px;
   position:absolute;
