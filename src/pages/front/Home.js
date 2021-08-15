@@ -8,7 +8,7 @@ export default function Home() {
           
 
             <div class="container">
-                <div class="row" style={{ marginRight: "50%" }}>
+                <div class="row" >
                     <div class=" about-content animated fadeIn scrollable" >
                         <h1 class="animated fadeIn one">Thank You</h1>
                         <h3 class="animated fadeIn one mt-4">About us</h3>
